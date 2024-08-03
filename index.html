@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="cow-sound" src="cow-moo.mp3"></audio>
+    <div id="form-container">
+        <div id="step1">
+            <h1>Welcome to Mardana Milk Shop</h1>
+            <label for="customer-name">Name:</label>
+            <input type="text" id="customer-name" name="customer-name">
+            <button onclick="goToStep2()">Next</button>
+        </div>
+
+        <div id="step2" style="display: none;">
+            <h1>Select Product</h1>
+            <label for="product-dropdown">Choose a product:</label>
+            <select id="product-dropdown">
+                <option value="full-cream">Full Cream Milk - $2.50</option>
+                <option value="skimmed">Skimmed Milk - $2.00</option>
+                <option value="organic">Organic Milk - $3.00</option>
+                <option value="almond">Almond Milk - $4.00</option>
+            </select>
+            <button onclick="goToStep3()">Next</button>
+        </div>
+
+        <div id="step3" style="display: none;">
+            <h1>Answer the Question</h1>
+            <p>Solve the following problem: A car accelerates from rest at 2 m/s² for 10 seconds. What is the final velocity?</p>
+            <input type="text" id="iq-answer">
+            <button onclick="verifyAnswer()">Submit</button>
+        </div>
+
+        <div id="step4" style="display: none;">
+            <h1>Payment</h1>
+            <p>Your selected product is: <span id="selected-product"></span></p>
+            <p>Total price: <span id="total-price"></span></p>
+            <form id="payment-form">
+                <!-- Payment integration code here -->
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+
+        <div id="step5" style="display: none;">
+            <h1>Verify ur a Human</h1>
+            <p>Select the real cow:</p>
+            <div class="cow-options">
+                <img src="cow1.jpg" alt="Cow 1" class="cow-image" onclick="verifyCow('Cow 1')">
+                <img src="cow2.jpg" alt="Cow 2" class="cow-image" onclick="verifyCow('Cow 2')">
+                <img src="cow3.jpg" alt="Cow 3" class="cow-image" onclick="verifyCow('Cow 3')">
+            </div>
+            <p id="feedback" style="display: none;"></p>
+            <button id="try-again-button" style="display: none;" onclick="tryAgain()">Try Again</button>
+        </div>
+
+        <div id="step6" style="display: none;">
+            <h1>Thank You!</h1>
+            <p>Thank you for your purchase! Have a great day!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
